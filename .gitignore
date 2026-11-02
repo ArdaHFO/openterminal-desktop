@@ -1,0 +1,31 @@
+node_modules/
+.next/
+dist/
+out/
+*.log
+.env
+.env.local
+.DS_Store
+
+
+# Database
+data/*.db*
+data/.api-key
+
+# Isolated browser test build and artifacts
+web/.next-*/
+test-artifacts/
+desktop/node_modules/
+
+# Local release and verification output
+outputs/
+launcher/dist/
+*.tsbuildinfo
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+.api-key
+.env.*
+!.env.example
+!**/.env.example

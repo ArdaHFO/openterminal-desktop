@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.join(process.env.LOCALAPPDATA,'OpenTerminal Desktop'),output=path.resolve(__dirname,'../outputs/desktop-audit');const pause=ms=>new Promise(r=>setTimeout(r,ms));
+async function main(){
+ let ready;const until=Date.now()+90000;
+ while(Date.now()<until){try{const log=fs.readFileSync(path.join(root,'logs/desktop.log'),'utf8');const line=log.trim().split('\n').reverse().find(l=>l.includes(' READY '));if(line){const ports=JSON.parse(line.split(' READY ')[1]),apiUrl=`http://127.0.0.1:${ports.apiPort}`,webUrl=`http://127.0.0.1:${ports.webPort}`;const [a,w]=await Promise.all([fetch(apiUrl+'/api/status',{signal:AbortSignal.timeout(2000)}).then(r=>r.json()),fetch(webUrl+'/api/status',{signal:AbortSignal.timeout(2000)}).then(r=>r.json())]);if(a.ok&&w.ok&&a.desktopInstance&&a.desktopInstance===w.desktopInstance){ready={...ports,apiUrl,webUrl};break;}}}catch{}await pause(500);}
+ assert.ok(ready,'Normal desktop services did not become ready');
+ const [quotes,history]=await Promise.all([fetch(ready.webUrl+'/api/quotes?symbols=AAPL',{signal:AbortSignal.timeout(90000)}).then(async r=>({status:r.status,data:await r.json()})),fetch(ready.webUrl+'/api/history/AAPL?range=6M',{signal:AbortSignal.timeout(90000)}).then(async r=>({status:r.status,data:await r.json()}))]);
+ assert.equal(quotes.status,200);assert.ok(Array.isArray(quotes.data)&&quotes.data.some(q=>q.symbol==='AAPL'&&Number.isFinite(q.price)&&q.price>0),'No actual AAPL price');assert.equal(history.status,200);const bars=Array.isArray(history.data)?history.data:history.data.candles;assert.ok(bars.length>50,'AAPL history is missing');
+ const portfolios=await(await fetch(ready.webUrl+'/api/portfolios',{signal:AbortSignal.timeout(5000)})).json();assert.ok(Array.isArray(portfolios));
+ const result={passed:true,version:ready.version,userData:root,apiPort:ready.apiPort,webPort:ready.webPort,liveAAPLQuote:true,liveAAPLSixMonthCandles:bars.length,portfolioApi:true};fs.writeFileSync(path.join(output,'production-launch.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+}main().catch(e=>{console.error(e);process.exitCode=1;});

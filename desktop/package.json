@@ -1,0 +1,12 @@
+{
+  "name": "openterminal-desktop",
+  "productName": "OpenTerminal Desktop",
+  "version": "1.0.0",
+  "description": "OpenTerminal Windows masaüstü uygulaması",
+  "author": "OpenTerminal contributors",
+  "license": "MIT",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {"test":"node --test policy.test.cjs","pack":"electron-builder --config builder.cjs --win --x64 --dir","installer":"node build.cjs"},
+  "devDependencies": {"electron":"45.1.0","electron-builder":"26.18.0"}
+}

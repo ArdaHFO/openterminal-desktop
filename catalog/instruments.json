@@ -1,0 +1,496 @@
+[
+  {
+    "symbol": "XAUUSD",
+    "name": "Gold / USD (OANDA CFD)",
+    "kind": "spot",
+    "exchange": "OANDA",
+    "currency": "USD",
+    "unit": "USD/troy oz",
+    "aliases": [
+      "XAU",
+      "XAU/USD",
+      "XAUUSD=X",
+      "OANDA:XAUUSD"
+    ],
+    "feed": "OANDA:XAUUSD",
+    "sessionStart": 17,
+    "volumeType": "tick",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "XAGUSD",
+    "name": "Silver / USD (OANDA CFD)",
+    "kind": "spot",
+    "exchange": "OANDA",
+    "currency": "USD",
+    "unit": "USD/troy oz",
+    "aliases": [
+      "XAG",
+      "XAG/USD",
+      "XAGUSD=X",
+      "OANDA:XAGUSD"
+    ],
+    "feed": "OANDA:XAGUSD",
+    "sessionStart": 17,
+    "volumeType": "tick",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "GC=F",
+    "name": "Gold futures (COMEX continuous proxy)",
+    "kind": "futures",
+    "exchange": "COMEX",
+    "currency": "USD",
+    "unit": "USD/troy oz",
+    "aliases": [
+      "GC1!",
+      "COMEX:GC1!"
+    ],
+    "feed": "COMEX:GC1!",
+    "sessionStart": 18,
+    "volumeType": "contracts",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "SI=F",
+    "name": "Silver futures (COMEX continuous proxy)",
+    "kind": "futures",
+    "exchange": "COMEX",
+    "currency": "USD",
+    "unit": "USD/troy oz",
+    "aliases": [
+      "SI1!",
+      "COMEX:SI1!"
+    ],
+    "feed": "COMEX:SI1!",
+    "sessionStart": 18,
+    "volumeType": "contracts",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "BTCUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "ETHUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "SOL",
+    "name": "Solana",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "SOLUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "BNB",
+    "name": "BNB",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "BNBUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "XRP",
+    "name": "XRP",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "XRPUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "ADA",
+    "name": "Cardano",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "ADAUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "DOGE",
+    "name": "Dogecoin",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "DOGEUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "AVAX",
+    "name": "Avalanche",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "AVAXUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "DOT",
+    "name": "Polkadot",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "DOTUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "LINK",
+    "name": "Chainlink",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "LINKUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "LTC",
+    "name": "Litecoin",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "LTCUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "MATIC",
+    "name": "Polygon",
+    "kind": "crypto",
+    "exchange": "Binance",
+    "currency": "USDT",
+    "unit": "USDT/coin",
+    "aliases": [],
+    "feed": "MATICUSDT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "^VIX",
+    "name": "CBOE Volatility Index",
+    "kind": "index",
+    "exchange": "CBOE",
+    "currency": null,
+    "unit": "index points",
+    "aliases": [
+      "VIX"
+    ],
+    "feed": "CBOE:VIX",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": false,
+      "earnings": false,
+      "insider": false,
+      "vwap": false
+    }
+  },
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "kind": "stock",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NASDAQ:AAPL",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": true,
+      "insider": true,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation",
+    "kind": "stock",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NASDAQ:MSFT",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": true,
+      "insider": true,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corporation",
+    "kind": "stock",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NASDAQ:NVDA",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": true,
+      "insider": true,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "IBM",
+    "name": "International Business Machines",
+    "kind": "stock",
+    "exchange": "NYSE",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NYSE:IBM",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": true,
+      "insider": true,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "JPM",
+    "name": "JPMorgan Chase",
+    "kind": "stock",
+    "exchange": "NYSE",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NYSE:JPM",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": true,
+      "insider": true,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "SPY",
+    "name": "SPDR S&P 500 ETF",
+    "kind": "etf",
+    "exchange": "AMEX",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "AMEX:SPY",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust",
+    "kind": "etf",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "NASDAQ:QQQ",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "GLD",
+    "name": "SPDR Gold Shares",
+    "kind": "etf",
+    "exchange": "AMEX",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "AMEX:GLD",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  },
+  {
+    "symbol": "SLV",
+    "name": "iShares Silver Trust",
+    "kind": "etf",
+    "exchange": "AMEX",
+    "currency": "USD",
+    "unit": "USD/share",
+    "aliases": [],
+    "feed": "AMEX:SLV",
+    "capabilities": {
+      "history": true,
+      "quote": true,
+      "options": true,
+      "earnings": false,
+      "insider": false,
+      "vwap": true
+    }
+  }
+]

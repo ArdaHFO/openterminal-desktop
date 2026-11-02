@@ -1,0 +1,5 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const installed=path.resolve(process.argv[2]??''),services=path.join(installed,'resources/services');const manifest=JSON.parse(fs.readFileSync(path.join(services,'manifest.json')));
+for(const file of manifest.files){const full=path.resolve(services,file.path);assert.ok(full.startsWith(services+path.sep),'Invalid manifest path');assert.equal(crypto.createHash('sha256').update(fs.readFileSync(full)).digest('hex'),file.sha256,'Mismatch '+file.path);}
+const asar=require('./node_modules/@electron/asar');for(const file of ['main.cjs','preload.cjs','services.cjs','policy.cjs'])assert.ok(asar.extractFile(path.join(installed,'resources/app.asar'),file).equals(fs.readFileSync(path.join(__dirname,file))),'Runtime source mismatch '+file);
+const result={passed:true,installed,serviceFilesVerified:manifest.files.length,runtimeSourcesVerified:4};fs.writeFileSync(path.resolve(__dirname,'../outputs/desktop-audit/installed-inventory.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
