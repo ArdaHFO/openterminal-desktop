@@ -1,13 +1,11 @@
-OpenTerminal Desktop brings market charts, news and a personal portfolio into one Windows app.
+OpenTerminal Desktop is a Windows app for market charts, news, saved workspaces and local portfolio records.
+
 
 <p align="center">
   <img src="desktop/assets/icon.png" width="112" alt="OpenTerminal Desktop icon" />
 </p>
 
 <h1 align="center">OpenTerminal Desktop</h1>
-
-<p align="center"><strong>Your markets. Your layout. Your desktop.</strong></p>
-<p align="center">A Windows desktop edition of OpenTerminal with saved workspaces, chart drawing tools, market replay and local portfolio backups.</p>
 
 <p align="center">
   <strong>English</strong> · <a href="README.tr.md">Türkçe</a><br />
@@ -16,15 +14,11 @@ OpenTerminal Desktop brings market charts, news and a personal portfolio into on
   <a href="https://github.com/ErTasselli/OpenTerminal">Original project</a>
 </p>
 
----
-
-Arrange charts, quotes, news and analysis panels around the way you follow the markets. Save a workspace for stocks, metals or crypto, annotate a chart, review historical candles, and keep a local record of portfolio transactions.
-
-**This edition extends [ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal).** The original project supplies the terminal interface, market-data providers and core widgets. This repository adds a standalone Windows desktop shell and the workflow changes described below. The upstream MIT license and contributor copyright are preserved. See [UPSTREAM.md](UPSTREAM.md) for the exact source revision and a file-level comparison.
-
-This repository contains source and build instructions. Compiled installers, dependencies, private configuration, portfolio databases and local test receipts are excluded. The interface mixes English market labels with Turkish desktop menus; both README languages cover the same edition.
+It extends [ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal), which provides the terminal interface, market-data adapters and core widgets. This edition adds the Electron desktop shell, packaging and workspace changes listed below. [UPSTREAM.md](UPSTREAM.md) records the source revision and file-level differences. Market labels are in English and desktop menus are in Turkish.
 
 ## Start with the source
+
+This repository contains source and build instructions; installers are not included.
 
 | Requirement | Setup |
 | --- | --- |
@@ -59,7 +53,7 @@ The local API generates a shared secret on first browser-mode startup and stores
 | Widget behavior | Explicit empty/error states, symbol unlinking, scoped options expiry and more robust TV playback handling |
 | Verification sources | Additional provider/math tests, synthetic browser scenarios, and desktop policy/service/lifecycle checks |
 
-These additions are visible in the source. Their presence does not mean the suites were rerun for this publication. The [implementation notes](docs/analysis-workspace-package.md) explain their behavior and constraints.
+See the [implementation notes](docs/analysis-workspace-package.md) for details and constraints.
 
 ## Workspace preview
 
@@ -67,7 +61,7 @@ These additions are visible in the source. Their presence does not mean the suit
   <img src="docs/screenshots/desktop-workspace.png" width="100%" alt="Historical OpenTerminal Desktop development workspace with chart, quotes, watchlist, news and macro panels" />
 </p>
 
-Existing desktop development capture from **29 October 2026**, reused without image edits. It shows the workspace from an earlier session, not a fresh launch or current provider-availability check. The other images in `docs/screenshots/` came from the original upstream project.
+Desktop development screenshot from **29 October 2026**, showing data from that session. Other images in `docs/screenshots/` come from the upstream project.
 
 ## Use the workspace
 
@@ -92,11 +86,10 @@ node --test desktop/policy.test.cjs
 
 Browser scenarios use synthetic API fixtures and isolated test output. Local Playwright configuration selects Microsoft Edge; CI selects Playwright Chromium. Desktop service checks require a prepared desktop stage, and installer checks intentionally exercise Windows installation state. Follow the [desktop guide](desktop/README.md) for those prerequisites.
 
-Builds and receipts belong under ignored `outputs/` and `test-artifacts/` directories. The publication preparation adjusted desktop output paths to stay inside this clone. No test suite, build or installer validation was run for this source publication. No fresh application screenshot or runtime validation was completed.
+Build output and test reports go under the ignored `outputs/` and `test-artifacts/` directories.
 
-## Validation and current limits
+## Limitations
 
-- Publication checks cover source provenance, the isolated file inventory, documentation links and exclusion of local data and credentials. Older validation sessions are not represented as new test results.
 - Market data uses public external endpoints. Availability, latency, precision and terms are provider-dependent; quotes can be delayed or incomplete.
 - The Windows package is unsigned and has no automatic update service. Updates require a newly built installer.
 - Replay is a simplified, long-only simulation. It does not model every trading cost, futures multiplier, corporate action or execution condition.
@@ -119,12 +112,10 @@ data/       Placeholder for local runtime data; private contents are ignored
 
 ## Contributing
 
-Keep changes focused and describe the affected workflow, provider assumptions and verification performed. Use isolated sample data when changing portfolio, backup or migration code. Never include account data, credentials or generated installer bundles in a source contribution.
-
-Report edition-specific problems through [this repository's issues](https://github.com/ArdaHFO/openterminal-desktop/issues). Changes intended for the original project should also respect its contribution process.
+Report desktop-edition problems through [issues](https://github.com/ArdaHFO/openterminal-desktop/issues), with the affected workflow and steps to reproduce. Use sample data for portfolio, backup or migration changes. Keep account data, credentials and installer bundles out of source contributions.
 
 ## License and upstream credits
 
-[MIT License](LICENSE), with the original **Copyright (c) 2026 OpenTerminal contributors** notice retained unchanged.
+[MIT License](LICENSE). The original **Copyright (c) 2026 OpenTerminal contributors** notice is unchanged.
 
-Original project: **[ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal)**. The local development base is [`aed097c680cd8ec1c391ae06966babe7d6d91fc6`](https://github.com/ErTasselli/OpenTerminal/commit/aed097c680cd8ec1c391ae06966babe7d6d91fc6). This desktop edition is an independent extension, not an official upstream release or provider endorsement. See [UPSTREAM.md](UPSTREAM.md) for attribution and the scope of changes. External data, media and bundled dependencies retain their own applicable terms and notices.
+Based on [ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal) at [`aed097c680cd8ec1c391ae06966babe7d6d91fc6`](https://github.com/ErTasselli/OpenTerminal/commit/aed097c680cd8ec1c391ae06966babe7d6d91fc6). This is an independent desktop extension, not an official upstream release. [UPSTREAM.md](UPSTREAM.md) lists the changes and image credits. External data, media and dependencies retain their own terms and notices.

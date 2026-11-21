@@ -1,13 +1,11 @@
-OpenTerminal Desktop, piyasa grafiklerini, haberleri ve kişisel portföyünü tek bir Windows uygulamasında bir araya getirir.
+OpenTerminal Desktop, piyasa grafikleri, haberler, kayıtlı çalışma alanları ve yerel portföy kayıtları için bir Windows uygulamasıdır.
+
 
 <p align="center">
   <img src="desktop/assets/icon.png" width="112" alt="OpenTerminal Desktop simgesi" />
 </p>
 
 <h1 align="center">OpenTerminal Desktop</h1>
-
-<p align="center"><strong>Piyasaların. Düzenin. Masaüstün.</strong></p>
-<p align="center">Kayıtlı çalışma alanları, grafik çizimleri, geçmiş piyasa oynatımı ve yerel portföy yedekleri sunan OpenTerminal Windows masaüstü sürümü.</p>
 
 <p align="center">
   <a href="README.md">English</a> · <strong>Türkçe</strong><br />
@@ -16,15 +14,11 @@ OpenTerminal Desktop, piyasa grafiklerini, haberleri ve kişisel portföyünü t
   <a href="https://github.com/ErTasselli/OpenTerminal">Özgün proje</a>
 </p>
 
----
-
-Grafik, fiyat, haber ve analiz panellerini piyasayı takip etme biçimine göre düzenle. Hisse, metal veya kripto için ayrı çalışma alanları kaydet, grafiklere çizim ekle, geçmiş mumları incele ve portföy işlemlerini yerel olarak tut.
-
-**Bu sürüm, [ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal) üzerine geliştirilmiştir.** Terminal arayüzü, piyasa verisi sağlayıcıları ve temel paneller özgün projeden gelir. Bu repo bağımsız Windows masaüstü katmanını ve aşağıdaki iş akışı geliştirmelerini ekler. Özgün MIT lisansı ve katkıcıların telif bildirimi korunur. Kesin kaynak sürümü ve dosya bazında karşılaştırma için [UPSTREAM.md](UPSTREAM.md) belgesine bak.
-
-Bu repo kaynak kodu ve derleme yönergelerini içerir. Derlenmiş kurucular, bağımlılıklar, özel ayarlar, portföy veritabanları ve yerel test kayıtları dahil edilmez. Arayüzde İngilizce piyasa etiketleri ile Türkçe masaüstü menüleri birlikte kullanılır. İki README aynı sürümü anlatır.
+[ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal) üzerine kuruludur; terminal arayüzü, piyasa verisi bağdaştırıcıları ve temel paneller özgün projeden gelir. Bu sürüm Electron masaüstü katmanını, paketlemeyi ve aşağıdaki çalışma alanı değişikliklerini ekler. [UPSTREAM.md](UPSTREAM.md) kaynak sürümünü ve dosya farklarını açıklar. Piyasa etiketleri İngilizce, masaüstü menüleri Türkçedir.
 
 ## Kaynaktan başla
+
+Repoda kaynak kodu ve derleme yönergeleri bulunur; kurucu dosyaları dahil değildir.
 
 | Gereksinim | Kurulum |
 | --- | --- |
@@ -59,7 +53,7 @@ Yerel API, tarayıcı kipindeki ilk açılışta ortak erişim anahtarı oluştu
 | Panel davranışları | Açık boş/hata durumları, sembol bağlantısını ayırma, sembole bağlı opsiyon vadesi ve TV oynatma hata yönetimi |
 | Doğrulama kaynakları | Ek sağlayıcı/matematik testleri, sentetik tarayıcı senaryoları ve masaüstü politika/servis/yaşam döngüsü kontrolleri |
 
-Bu eklemeler kaynak kodda bulunur. Varlıkları, testlerin bu yayın için yeniden çalıştırıldığı anlamına gelmez. Davranış ve sınırlar [uygulama notlarında](docs/analysis-workspace-package.md) açıklanır.
+Ayrıntılar ve sınırlar [uygulama notlarında](docs/analysis-workspace-package.md) açıklanır.
 
 ## Çalışma alanı önizlemesi
 
@@ -67,7 +61,7 @@ Bu eklemeler kaynak kodda bulunur. Varlıkları, testlerin bu yayın için yenid
   <img src="docs/screenshots/desktop-workspace.png" width="100%" alt="Grafik, fiyat, izleme listesi, haber ve makro panelleri içeren eski OpenTerminal Desktop geliştirme kaydı" />
 </p>
 
-**29 Ekim 2026** tarihli mevcut masaüstü geliştirme görüntüsü, üzerinde görsel düzenleme yapılmadan yeniden kullanıldı. Önceki oturumu gösterir; yeni açılış veya güncel sağlayıcı erişimi doğrulaması değildir. `docs/screenshots/` içindeki diğer görüntüler özgün projeden gelir.
+**29 Ekim 2026** geliştirme oturumundan masaüstü görüntüsü; görünen veriler o oturuma aittir. `docs/screenshots/` içindeki diğer görseller özgün projeden gelir.
 
 ## Çalışma alanını kullan
 
@@ -92,11 +86,10 @@ node --test desktop/policy.test.cjs
 
 Tarayıcı senaryoları sentetik API yanıtları ve ayrı test çıktıları kullanır. Yerel Playwright ayarı Microsoft Edge'i, CI ise Playwright Chromium'u seçer. Masaüstü servis kontrolleri hazırlanmış paket alanı gerektirir. Kurucu kontrolleri Windows kurulum durumunu özellikle değiştirir. Önkoşullar için [masaüstü rehberini](desktop/README.md) izle.
 
-Derlemeler ve kayıtlar, Git tarafından dışlanan `outputs/` ve `test-artifacts/` klasörlerine yazılır. Yayın hazırlığında masaüstü çıktı yolları bu klonun içinde kalacak şekilde düzenlendi. Bu kaynak yayını için test paketi, derleme veya kurucu doğrulaması çalıştırılmadı. Yeni bir uygulama ekran görüntüsü ya da çalışma zamanı doğrulaması tamamlanmadı.
+Derleme çıktıları ve test raporları, Git’in dışladığı `outputs/` ve `test-artifacts/` klasörlerine yazılır.
 
-## Doğrulama ve mevcut sınırlar
+## Sınırlar
 
-- Yayın kontrolleri kaynak kökenini, izole dosya envanterini, belge bağlantılarını ve yerel veri/erişim bilgilerinin dışlanmasını kapsar. Önceki doğrulama oturumları yeni test sonucu olarak sunulmaz.
 - Piyasa verisi dış sağlayıcıların herkese açık uç noktalarından gelir. Erişim, gecikme, doğruluk ve kullanım koşulları sağlayıcıya bağlıdır; fiyatlar gecikmeli veya eksik olabilir.
 - Windows paketi imzasızdır ve otomatik güncelleme servisi yoktur. Güncelleme yeni bir kurucu oluşturmayı gerektirir.
 - Replay basitleştirilmiş, yalnız uzun pozisyon kullanan bir simülasyondur. Her maliyeti, vadeli sözleşme çarpanını, şirket işlemini veya gerçekleşme koşulunu modellemez.
@@ -119,12 +112,10 @@ data/       Yerel çalışma verileri için yer tutucu; özel içerikler dışla
 
 ## Katkı
 
-Değişikliği odaklı tut ve etkilenen akışı, sağlayıcı varsayımlarını ve yapılan doğrulamayı açıkla. Portföy, yedekleme veya aktarma kodunu değiştirirken ayrı örnek veriler kullan. Hesap verilerini, erişim anahtarlarını veya üretilmiş kurucu paketlerini kaynak katkısına ekleme.
-
-Bu sürüme özgü sorunları [repo issue sayfasında](https://github.com/ArdaHFO/openterminal-desktop/issues) bildir. Özgün projeye gönderilecek değişikliklerde onun katkı sürecine de uy.
+Masaüstü sürümündeki sorunları, ilgili akış ve tekrar adımlarıyla [issue sayfasında](https://github.com/ArdaHFO/openterminal-desktop/issues) bildir. Portföy, yedekleme veya aktarma değişikliklerinde örnek veri kullan. Hesap verilerini, erişim anahtarlarını ve kurucu paketlerini kaynak katkılarına ekleme.
 
 ## Lisans ve özgün proje
 
-[MIT Lisansı](LICENSE) ve özgün **Copyright (c) 2026 OpenTerminal contributors** bildirimi değiştirilmeden korunur.
+[MIT Lisansı](LICENSE). Özgün **Copyright (c) 2026 OpenTerminal contributors** bildirimi değiştirilmeden korunur.
 
-Özgün proje **[ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal)**. Yerel geliştirme tabanı [`aed097c680cd8ec1c391ae06966babe7d6d91fc6`](https://github.com/ErTasselli/OpenTerminal/commit/aed097c680cd8ec1c391ae06966babe7d6d91fc6) commit'idir. Bu masaüstü sürümü bağımsız bir genişletmedir; resmî upstream sürümü veya veri sağlayıcısı onayı değildir. Atıf ve değişiklik kapsamı için [UPSTREAM.md](UPSTREAM.md) belgesine bak. Dış veri, medya ve paketlenen bağımlılıkların kendi koşulları ve bildirimleri geçerliliğini korur.
+[ErTasselli/OpenTerminal](https://github.com/ErTasselli/OpenTerminal) projesinin [`aed097c680cd8ec1c391ae06966babe7d6d91fc6`](https://github.com/ErTasselli/OpenTerminal/commit/aed097c680cd8ec1c391ae06966babe7d6d91fc6) sürümünü temel alır. Bağımsız bir masaüstü genişletmesidir, resmî upstream sürümü değildir. Değişiklikler ve görsel atıfları [UPSTREAM.md](UPSTREAM.md) belgesindedir. Dış veri, medya ve bağımlılıklar kendi koşullarını ve bildirimlerini korur.
